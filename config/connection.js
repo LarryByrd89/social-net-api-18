@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const DB_NAME = 'social-net-api-18';
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DB_NAME}`, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social-net-api-18', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${DB_NAME}`, {
 
 const db = mongoose.connection;
 
-// Handle connection events
+// Connection events
 db.on('connected', () => {
   console.log(`Connected to MongoDB database: ${DB_NAME}`);
 });
