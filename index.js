@@ -20,7 +20,7 @@ mongoose.connection.on('connected', () => {
 });
 
 // API routes
-const apiRoutes = require('./routes/api');
+const apiRoutes = require('./routes/index');
 app.use('/api', apiRoutes);
 
 app.use((req, res) => {
