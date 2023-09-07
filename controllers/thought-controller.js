@@ -1,8 +1,8 @@
-const { Thought, User } = require('../models');
+const { Thought, User, Reaction } = require('../models');
 
 const thoughtController = {
-  // GET all thoughts
-  getAllThoughts(req, res) {
+  // GET thoughts
+  getThoughts(req, res) {
     Thought.find({})
       .populate({
         path: 'reactions',
@@ -30,6 +30,7 @@ const thoughtController = {
       })
       .catch(err => res.status(400).json(err));
   },
+
 
   // POST create a new thought
   createThought(req, res) {
